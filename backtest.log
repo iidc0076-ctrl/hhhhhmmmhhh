@@ -1,0 +1,36 @@
+2025-08-13 14:41:51,427 - INFO - Starting 1-day backtest from 2025-08-12 00:00:00 to 2025-08-13 00:00:00
+2025-08-13 14:41:51,429 - INFO - Initial capital: $200.00
+2025-08-13 14:41:51,429 - INFO - Position size: $10.0
+2025-08-13 14:41:51,429 - INFO - Payout rate: 85.0%
+2025-08-13 14:41:51,430 - INFO - Minimum confidence: 70%
+2025-08-13 14:41:51,430 - INFO - Getting historical data for EUR/USD
+2025-08-13 14:41:51,430 - WARNING - Using synthetic data for EUR/USD - real data unavailable
+2025-08-13 14:41:51,437 - INFO - Backtesting EUR/USD with 288 data points
+2025-08-13 14:41:51,438 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:41:51,441 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:41:51,442 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:41:51,444 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:41:51,449 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:41:51,451 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:41:51,452 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:41:51,453 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:41:51,454 - INFO - Completed EUR/USD: 0 trades
+2025-08-13 14:41:51,488 - INFO - Results saved with session ID: backtest_1754956800
+2025-08-13 14:42:21,455 - INFO - Starting 1-day backtest from 2025-08-12 00:00:00 to 2025-08-13 00:00:00
+2025-08-13 14:42:21,455 - INFO - Initial capital: $100.00
+2025-08-13 14:42:21,456 - INFO - Position size: $5.0
+2025-08-13 14:42:21,457 - INFO - Payout rate: 85.0%
+2025-08-13 14:42:21,457 - INFO - Minimum confidence: 60%
+2025-08-13 14:42:21,458 - INFO - Getting historical data for EUR/USD
+2025-08-13 14:42:21,458 - WARNING - Using synthetic data for EUR/USD - real data unavailable
+2025-08-13 14:42:21,466 - INFO - Backtesting EUR/USD with 288 data points
+2025-08-13 14:42:21,473 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:42:21,478 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:42:21,479 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:42:21,480 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:42:21,481 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:42:21,483 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:42:21,483 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:42:21,484 - WARNING - Using fallback analysis for EUR/USD - bot analysis unavailable
+2025-08-13 14:42:21,485 - INFO - Completed EUR/USD: 7 trades
+2025-08-13 14:42:21,533 - INFO - Results saved with session ID: backtest_1754956800

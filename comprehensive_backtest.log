@@ -1,0 +1,51 @@
+2025-08-08 12:11:06,413 - WARNING - Volume analyzer not available: cannot import name 'VolumeAnalysisEngine' from 'advanced_volume_analysis' (/home/runner/workspace/advanced_volume_analysis.py)
+2025-08-08 12:11:06,419 - WARNING - Order flow detector not available: cannot import name 'safe_corrcoef' from 'safe_math_utils' (/home/runner/workspace/safe_math_utils.py)
+2025-08-08 12:11:06,429 - WARNING - Seasonal analyzer not available: cannot import name 'SeasonalPatternAnalyzer' from 'seasonal_cyclical_pattern_recognition' (/home/runner/workspace/seasonal_cyclical_pattern_recognition.py)
+2025-08-08 12:11:06,437 - WARNING - Breakout validator not available: cannot import name 'BreakoutValidationSystem' from 'breakout_validation_system' (/home/runner/workspace/breakout_validation_system.py)
+2025-08-08 12:11:06,853 - INFO - Unified Confidence Engine initialized
+2025-08-08 12:11:06,853 - INFO - Integrated Analysis Engine initialized
+2025-08-08 12:11:06,854 - INFO - Enhanced Analysis Engine initialized
+2025-08-08 12:11:06,854 - INFO - SMC Analyzer initialized
+2025-08-08 12:11:06,854 - INFO - Liquidity Analyzer initialized
+2025-08-08 12:11:06,854 - INFO - Microstructure Analyzer initialized
+2025-08-08 12:11:06,855 - INFO - ML Predictor initialized
+2025-08-08 12:11:06,855 - INFO - Initialized 7 analysis engines
+2025-08-08 12:11:06,855 - INFO - Available analysis engines: ['unified_confidence', 'analysis_pipeline', 'enhanced_analysis', 'smc_analyzer', 'liquidity_analyzer', 'microstructure', 'ml_predictor']
+2025-08-08 12:11:06,856 - INFO - ================================================================================
+2025-08-08 12:11:06,856 - INFO - COMPREHENSIVE QUANTVISION BACKTEST: comprehensive_20250808_121106
+2025-08-08 12:11:06,856 - INFO - ================================================================================
+2025-08-08 12:11:06,856 - INFO - Testing 7 analysis modules
+2025-08-08 12:11:06,857 - INFO - Currency pairs: EURUSD, GBPUSD, USDJPY (first 3 for demo)
+2025-08-08 12:11:06,857 - INFO - Timeframes: 1m, 5m, 15m
+2025-08-08 12:11:06,858 - INFO - 
+Testing EURUSD on 1m
+2025-08-08 12:11:07,137 - INFO -   Completed 13 tests for EURUSD 1m
+2025-08-08 12:11:07,138 - INFO - 
+Testing EURUSD on 5m
+2025-08-08 12:11:07,406 - INFO -   Completed 26 tests for EURUSD 5m
+2025-08-08 12:11:07,406 - INFO - 
+Testing GBPUSD on 1m
+2025-08-08 12:11:07,681 - INFO -   Completed 39 tests for GBPUSD 1m
+2025-08-08 12:11:07,682 - INFO - 
+Testing GBPUSD on 5m
+2025-08-08 12:11:07,961 - INFO -   Completed 52 tests for GBPUSD 5m
+2025-08-08 12:11:07,962 - INFO - 
+Testing USDJPY on 1m
+2025-08-08 12:11:08,196 - INFO -   Completed 65 tests for USDJPY 1m
+2025-08-08 12:11:08,197 - INFO - 
+Testing USDJPY on 5m
+2025-08-08 12:11:08,439 - INFO -   Completed 78 tests for USDJPY 5m
+2025-08-08 12:11:08,458 - INFO - ================================================================================
+2025-08-08 12:11:08,458 - INFO - COMPREHENSIVE BACKTEST RESULTS
+2025-08-08 12:11:08,459 - INFO - ================================================================================
+2025-08-08 12:11:08,459 - INFO - Session: comprehensive_20250808_121106
+2025-08-08 12:11:08,459 - INFO - Total Trades: 78
+2025-08-08 12:11:08,460 - INFO - Winning Trades: 10
+2025-08-08 12:11:08,460 - INFO - Win Rate: 12.82%
+2025-08-08 12:11:08,461 - INFO - Total PnL: -0.5800
+2025-08-08 12:11:08,461 - INFO - Max Drawdown: 0.5900
+2025-08-08 12:11:08,461 - INFO - Average Confidence: 50.00%
+2025-08-08 12:11:08,462 - INFO - Total Execution Time: 0.01s
+2025-08-08 12:11:08,462 - INFO - 
+MODULE PERFORMANCE RANKING:
+2025-08-08 12:11:08,462 - INFO - ================================================================================

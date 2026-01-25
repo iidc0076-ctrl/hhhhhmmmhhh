@@ -1,0 +1,24 @@
+[project]
+name = "workspace"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp>=3.12.15",
+    "anthropic>=0.61.0",
+    "asyncio>=4.0.0",
+    "beautifulsoup4>=4.13.4",
+    "discord-py>=2.5.2",
+    "flask>=3.1.1",
+    "matplotlib>=3.10.5",
+    "numpy>=2.3.2",
+    "pandas>=2.3.1",
+    "plotly>=6.2.0",
+    "psutil>=7.0.0",
+    "python-dotenv>=1.1.1",
+    "requests>=2.32.4",
+    "scikit-learn>=1.7.1",
+    "ta>=0.11.0",
+    "trafilatura>=2.0.0",
+    "twelvedata>=1.2.25",
+]
