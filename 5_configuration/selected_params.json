@@ -1,0 +1,102 @@
+{
+  "AUD/USD": {
+    "rsi_period": 14,
+    "rsi_oversold": 25,
+    "rsi_overbought": 70,
+    "sma_short": 20,
+    "sma_long": 50,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "vote_threshold": 50
+  },
+  "EUR/GBP": {
+    "rsi_period": 7,
+    "rsi_oversold": 30,
+    "rsi_overbought": 70,
+    "sma_short": 20,
+    "sma_long": 50,
+    "macd_fast": 8,
+    "macd_slow": 34,
+    "vote_threshold": 50
+  },
+  "EUR/JPY": {
+    "rsi_period": 14,
+    "rsi_oversold": 25,
+    "rsi_overbought": 70,
+    "sma_short": 20,
+    "sma_long": 50,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "vote_threshold": 50
+  },
+  "EUR/USD": {
+    "rsi_period": 14,
+    "rsi_oversold": 25,
+    "rsi_overbought": 70,
+    "sma_short": 20,
+    "sma_long": 50,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "vote_threshold": 50
+  },
+  "GBP/JPY": {
+    "rsi_period": 14,
+    "rsi_oversold": 25,
+    "rsi_overbought": 70,
+    "sma_short": 20,
+    "sma_long": 50,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "vote_threshold": 50
+  },
+  "GBP/USD": {
+    "rsi_period": 14,
+    "rsi_oversold": 25,
+    "rsi_overbought": 70,
+    "sma_short": 20,
+    "sma_long": 50,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "vote_threshold": 50
+  },
+  "NZD/USD": {
+    "rsi_period": 14,
+    "rsi_oversold": 25,
+    "rsi_overbought": 70,
+    "sma_short": 20,
+    "sma_long": 50,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "vote_threshold": 50
+  },
+  "USD/CAD": {
+    "rsi_period": 14,
+    "rsi_oversold": 25,
+    "rsi_overbought": 70,
+    "sma_short": 10,
+    "sma_long": 50,
+    "macd_fast": 8,
+    "macd_slow": 34,
+    "vote_threshold": 50
+  },
+  "USD/CHF": {
+    "rsi_period": 14,
+    "rsi_oversold": 25,
+    "rsi_overbought": 70,
+    "sma_short": 20,
+    "sma_long": 50,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "vote_threshold": 50
+  },
+  "USD/JPY": {
+    "rsi_period": 14,
+    "rsi_oversold": 25,
+    "rsi_overbought": 70,
+    "sma_short": 20,
+    "sma_long": 50,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "vote_threshold": 50
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "typeCheckingMode": "off",
+  "pythonVersion": "3.11",
+  "pythonPath": "./venv/bin/python",
+  "include": [
+    "."
+  ],
+  "extraPaths": [
+    "./6_utilities",
+    "./3_signal_analysis",
+    "./2_core_system"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.*",
+    "**/.git"
+  ]
+}

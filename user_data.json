@@ -1,20 +1,8 @@
 {
   "custom_styles": {},
   "user_authorization": {
-    "852781959717453824": {
-      "granted_at": "2025-06-27T11:49:13.968157",
-      "granted_by": "1000336199774371901",
-      "duration_days": null,
-      "expires_at": null
-    },
     "1000336199774371901": {
-      "granted_at": "2025-07-03T15:30:53.360752",
-      "granted_by": "1000336199774371901",
-      "duration_days": null,
-      "expires_at": null
-    },
-    "1398603105351897098": {
-      "granted_at": "2025-07-28T09:41:24.047479",
+      "granted_at": "2026-01-27T12:13:54.390698",
       "granted_by": "1000336199774371901",
       "duration_days": null,
       "expires_at": null
@@ -23,64 +11,34 @@
   "user_verification": {
     "1000336199774371901": {
       "verified": true,
-      "verification_date": "2025-06-26T16:42:42.642067"
-    },
-    "1398603105351897098": {
-      "verified": true,
-      "verification_date": "2025-08-11T09:38:09.635376"
+      "verification_date": "2026-01-27T11:18:43.618245+00:00"
     }
   },
   "blacklisted_users": [],
   "user_quotas": {},
   "user_recommendations": {},
-  "settings": {
-    "QUOTA": "5"
+  "user_fingerprints": {
+    "1000336199774371901": "3e0ff911b092d09a"
   },
   "user_agreements": {
     "1000336199774371901": {
       "agreed": true,
       "privacy_policy": true,
       "terms_of_service": true,
-      "agreement_date": "2025-06-26T16:42:04.718813"
-    },
-    "1398603105351897098": {
-      "agreed": true,
-      "privacy_policy": true,
-      "terms_of_service": true,
-      "agreement_date": "2025-08-11T09:37:48.551038"
+      "agreement_date": "2026-01-27T11:18:37.239774+00:00"
     }
   },
   "user_profiles": {
     "1000336199774371901": {
       "username": "Tlo",
-      "guild_name": "QuantVision",
-      "join_date": "2025-06-26T16:42:47.925991",
-      "last_active": "2025-08-12T13:46:49.053758",
-      "commands_used": 195,
-      "verification_level": "basic"
-    },
-    "1398603105351897098": {
-      "username": "expermental",
-      "guild_name": "QuantVision",
-      "join_date": "2025-07-28T09:37:50.838875",
-      "last_active": "2025-08-14T12:08:34.764163",
-      "commands_used": 487,
+      "guild_name": "QuantVision | Top-Rated AI Trading",
+      "join_date": "2026-01-27T09:26:57.258876+00:00",
+      "last_active": "2026-01-27T13:42:42.948348+00:00",
+      "commands_used": 58,
       "verification_level": "basic"
     }
   },
-  "user_fingerprints": {
-    "1000336199774371901": "7f91dc7bc83cc391",
-    "1398603105351897098": "84f3c6943128ec7c"
-  },
-  "response_targeting": {
-    "mode": "guild_specific",
-    "allowed_guilds": [
-      "1205965176046620724"
-    ],
-    "allowed_channels": {
-      "1205965176046620724": [
-        "commands"
-      ]
-    }
+  "settings": {
+    "QUOTA": "5"
   }
 }

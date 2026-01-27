@@ -1,0 +1,167 @@
+{
+  "total_pairs": 10,
+  "overall_metrics": {
+    "total_trades": 648,
+    "winning_trades": 331,
+    "losing_trades": 317,
+    "win_rate": 51.080246913580254,
+    "profit_factor": 0.8875394321766534,
+    "total_pnl": -3565,
+    "avg_win": 85.0,
+    "avg_loss": 100.0,
+    "sharpe_ratio": -0.9443749271439866
+  },
+  "by_pair": {
+    "AUD/USD": {
+      "trades": 55,
+      "metrics": {
+        "total_trades": 55,
+        "winning_trades": 26,
+        "losing_trades": 29,
+        "win_rate": 47.27272727272727,
+        "profit_factor": 0.762068965517215,
+        "total_pnl": -690,
+        "avg_win": 85.0,
+        "avg_loss": 100.0,
+        "sharpe_ratio": -2.15621448785996
+      }
+    },
+    "EUR/GBP": {
+      "trades": 0,
+      "metrics": {
+        "total_trades": 0,
+        "winning_trades": 0,
+        "losing_trades": 0,
+        "win_rate": 0,
+        "profit_factor": 0,
+        "total_pnl": 0,
+        "avg_win": 0,
+        "avg_loss": 0,
+        "sharpe_ratio": 0
+      }
+    },
+    "EUR/JPY": {
+      "trades": 0,
+      "metrics": {
+        "total_trades": 0,
+        "winning_trades": 0,
+        "losing_trades": 0,
+        "win_rate": 0,
+        "profit_factor": 0,
+        "total_pnl": 0,
+        "avg_win": 0,
+        "avg_loss": 0,
+        "sharpe_ratio": 0
+      }
+    },
+    "EUR/USD": {
+      "trades": 119,
+      "metrics": {
+        "total_trades": 119,
+        "winning_trades": 58,
+        "losing_trades": 61,
+        "win_rate": 48.739495798319325,
+        "profit_factor": 0.8081967213114621,
+        "total_pnl": -1170,
+        "avg_win": 85.0,
+        "avg_loss": 100.0,
+        "sharpe_ratio": -1.6878563791436219
+      }
+    },
+    "GBP/JPY": {
+      "trades": 0,
+      "metrics": {
+        "total_trades": 0,
+        "winning_trades": 0,
+        "losing_trades": 0,
+        "win_rate": 0,
+        "profit_factor": 0,
+        "total_pnl": 0,
+        "avg_win": 0,
+        "avg_loss": 0,
+        "sharpe_ratio": 0
+      }
+    },
+    "GBP/USD": {
+      "trades": 298,
+      "metrics": {
+        "total_trades": 298,
+        "winning_trades": 168,
+        "losing_trades": 130,
+        "win_rate": 56.375838926174495,
+        "profit_factor": 1.09846153846153,
+        "total_pnl": 1280,
+        "avg_win": 85.0,
+        "avg_loss": 100.0,
+        "sharpe_ratio": 0.7432111125157905
+      }
+    },
+    "NZD/USD": {
+      "trades": 98,
+      "metrics": {
+        "total_trades": 98,
+        "winning_trades": 41,
+        "losing_trades": 57,
+        "win_rate": 41.83673469387755,
+        "profit_factor": 0.6114035087719191,
+        "total_pnl": -2215,
+        "avg_win": 85.0,
+        "avg_loss": 100.0,
+        "sharpe_ratio": -3.9316324994309446
+      }
+    },
+    "USD/CAD": {
+      "trades": 34,
+      "metrics": {
+        "total_trades": 34,
+        "winning_trades": 22,
+        "losing_trades": 12,
+        "win_rate": 64.70588235294117,
+        "profit_factor": 1.5583333333332035,
+        "total_pnl": 670,
+        "avg_win": 85.0,
+        "avg_loss": 100.0,
+        "sharpe_ratio": 3.5383548217004535
+      }
+    },
+    "USD/CHF": {
+      "trades": 44,
+      "metrics": {
+        "total_trades": 44,
+        "winning_trades": 16,
+        "losing_trades": 28,
+        "win_rate": 36.36363636363637,
+        "profit_factor": 0.48571428571426833,
+        "total_pnl": -1440,
+        "avg_win": 85.0,
+        "avg_loss": 100.0,
+        "sharpe_ratio": -5.8378378378312785
+      }
+    },
+    "USD/JPY": {
+      "trades": 0,
+      "metrics": {
+        "total_trades": 0,
+        "winning_trades": 0,
+        "losing_trades": 0,
+        "win_rate": 0,
+        "profit_factor": 0,
+        "total_pnl": 0,
+        "avg_win": 0,
+        "avg_loss": 0,
+        "sharpe_ratio": 0
+      }
+    }
+  },
+  "consistency_analysis": {
+    "pairs_tested": 10,
+    "avg_win_rate": 29.52943154076762,
+    "std_win_rate": 25.155692732267454,
+    "min_win_rate": 0.0,
+    "max_win_rate": 64.70588235294117,
+    "avg_pnl": -356.5,
+    "winning_pairs": 2,
+    "losing_pairs": 8
+  },
+  "timestamp": "2026-01-26T14:16:59.839588"
+}

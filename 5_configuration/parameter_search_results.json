@@ -1,0 +1,412 @@
+[
+  {
+    "pair": "USD/CAD",
+    "top": [
+      {
+        "params": {
+          "rsi_period": 14,
+          "rsi_oversold": 25,
+          "rsi_overbought": 70,
+          "sma_short": 10,
+          "sma_long": 50,
+          "macd_fast": 8,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4611,
+          "wins": 2474,
+          "losses": 2137,
+          "win_rate": 53.65430492301019,
+          "profit_factor": 0.9840430510060829,
+          "total_pnl": -3410
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 14,
+          "rsi_oversold": 30,
+          "rsi_overbought": 70,
+          "sma_short": 10,
+          "sma_long": 50,
+          "macd_fast": 8,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4635,
+          "wins": 2486,
+          "losses": 2149,
+          "win_rate": 53.635382955771306,
+          "profit_factor": 0.9832945556072588,
+          "total_pnl": -3590
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 14,
+          "rsi_oversold": 30,
+          "rsi_overbought": 70,
+          "sma_short": 10,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4701,
+          "wins": 2520,
+          "losses": 2181,
+          "win_rate": 53.60561582641991,
+          "profit_factor": 0.9821182943603848,
+          "total_pnl": -3900
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 14,
+          "rsi_oversold": 25,
+          "rsi_overbought": 70,
+          "sma_short": 10,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 26,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4606,
+          "wins": 2468,
+          "losses": 2138,
+          "win_rate": 53.58228397742075,
+          "profit_factor": 0.9811973807296535,
+          "total_pnl": -4020
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 14,
+          "rsi_oversold": 30,
+          "rsi_overbought": 70,
+          "sma_short": 10,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 26,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4631,
+          "wins": 2481,
+          "losses": 2150,
+          "win_rate": 53.573742172317,
+          "profit_factor": 0.9808604651162787,
+          "total_pnl": -4115
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 14,
+          "rsi_oversold": 30,
+          "rsi_overbought": 75,
+          "sma_short": 10,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4653,
+          "wins": 2492,
+          "losses": 2161,
+          "win_rate": 53.556845046206746,
+          "profit_factor": 0.9801943544655248,
+          "total_pnl": -4280
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 14,
+          "rsi_oversold": 25,
+          "rsi_overbought": 70,
+          "sma_short": 10,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4668,
+          "wins": 2500,
+          "losses": 2168,
+          "win_rate": 53.55612682090831,
+          "profit_factor": 0.9801660516605162,
+          "total_pnl": -4300
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 14,
+          "rsi_oversold": 25,
+          "rsi_overbought": 75,
+          "sma_short": 10,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4620,
+          "wins": 2472,
+          "losses": 2148,
+          "win_rate": 53.5064935064935,
+          "profit_factor": 0.9782122905027929,
+          "total_pnl": -4680
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 14,
+          "rsi_oversold": 25,
+          "rsi_overbought": 75,
+          "sma_short": 10,
+          "sma_long": 50,
+          "macd_fast": 8,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4585,
+          "wins": 2453,
+          "losses": 2132,
+          "win_rate": 53.50054525627045,
+          "profit_factor": 0.977978424015009,
+          "total_pnl": -4695
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 21,
+          "rsi_oversold": 30,
+          "rsi_overbought": 70,
+          "sma_short": 10,
+          "sma_long": 50,
+          "macd_fast": 8,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4572,
+          "wins": 2446,
+          "losses": 2126,
+          "win_rate": 53.499562554680665,
+          "profit_factor": 0.9779397930385697,
+          "total_pnl": -4690
+        }
+      }
+    ]
+  },
+  {
+    "pair": "EUR/GBP",
+    "top": [
+      {
+        "params": {
+          "rsi_period": 7,
+          "rsi_oversold": 30,
+          "rsi_overbought": 70,
+          "sma_short": 20,
+          "sma_long": 50,
+          "macd_fast": 8,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 5249,
+          "wins": 2569,
+          "losses": 2680,
+          "win_rate": 48.94265574395123,
+          "profit_factor": 0.8147947761194027,
+          "total_pnl": -49635
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 7,
+          "rsi_oversold": 30,
+          "rsi_overbought": 70,
+          "sma_short": 20,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 26,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 5293,
+          "wins": 2588,
+          "losses": 2705,
+          "win_rate": 48.89476667296429,
+          "profit_factor": 0.8132347504621068,
+          "total_pnl": -50520
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 7,
+          "rsi_oversold": 30,
+          "rsi_overbought": 70,
+          "sma_short": 20,
+          "sma_long": 50,
+          "macd_fast": 8,
+          "macd_slow": 26,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 5135,
+          "wins": 2509,
+          "losses": 2626,
+          "win_rate": 48.860759493670884,
+          "profit_factor": 0.8121287128712867,
+          "total_pnl": -49335
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 7,
+          "rsi_oversold": 30,
+          "rsi_overbought": 75,
+          "sma_short": 20,
+          "sma_long": 50,
+          "macd_fast": 8,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 5153,
+          "wins": 2515,
+          "losses": 2638,
+          "win_rate": 48.80652047351058,
+          "profit_factor": 0.810367702805155,
+          "total_pnl": -50025
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 7,
+          "rsi_oversold": 30,
+          "rsi_overbought": 70,
+          "sma_short": 20,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 34,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 5395,
+          "wins": 2633,
+          "losses": 2762,
+          "win_rate": 48.80444856348471,
+          "profit_factor": 0.8103005068790728,
+          "total_pnl": -52395
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 21,
+          "rsi_oversold": 25,
+          "rsi_overbought": 70,
+          "sma_short": 20,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 26,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4590,
+          "wins": 2239,
+          "losses": 2351,
+          "win_rate": 48.77995642701525,
+          "profit_factor": 0.8095065929391745,
+          "total_pnl": -44785
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 21,
+          "rsi_oversold": 25,
+          "rsi_overbought": 75,
+          "sma_short": 20,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 26,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4590,
+          "wins": 2239,
+          "losses": 2351,
+          "win_rate": 48.77995642701525,
+          "profit_factor": 0.8095065929391745,
+          "total_pnl": -44785
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 21,
+          "rsi_oversold": 30,
+          "rsi_overbought": 70,
+          "sma_short": 20,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 26,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4590,
+          "wins": 2239,
+          "losses": 2351,
+          "win_rate": 48.77995642701525,
+          "profit_factor": 0.8095065929391745,
+          "total_pnl": -44785
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 21,
+          "rsi_oversold": 30,
+          "rsi_overbought": 75,
+          "sma_short": 20,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 26,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4590,
+          "wins": 2239,
+          "losses": 2351,
+          "win_rate": 48.77995642701525,
+          "profit_factor": 0.8095065929391745,
+          "total_pnl": -44785
+        }
+      },
+      {
+        "params": {
+          "rsi_period": 14,
+          "rsi_oversold": 30,
+          "rsi_overbought": 75,
+          "sma_short": 20,
+          "sma_long": 50,
+          "macd_fast": 12,
+          "macd_slow": 26,
+          "vote_threshold": 50
+        },
+        "metrics": {
+          "total_trades": 4636,
+          "wins": 2261,
+          "losses": 2375,
+          "win_rate": 48.77049180327869,
+          "profit_factor": 0.8091999999999997,
+          "total_pnl": -45315
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "pair": "USD/CAD",
+  "total_trades": 111,
+  "wins": 71,
+  "losses": 40,
+  "win_rate": 63.96396396396396,
+  "profit_factor": 1.5087499999999623,
+  "total_pnl": 2035,
+  "parameters": {
+    "rsi_period": 14,
+    "rsi_oversold": 25,
+    "rsi_overbought": 70,
+    "sma_short": 10,
+    "sma_long": 50,
+    "macd_fast": 8,
+    "macd_slow": 34,
+    "vote_threshold": 50
+  },
+  "timestamp": "2026-01-26 14:57:20.840188"
+}

@@ -1,0 +1,120 @@
+{
+  "successful": 30,
+  "failed": 0,
+  "real_data": 0,
+  "synthetic_data": 30,
+  "by_pair": {
+    "EUR/USD": {
+      "1min": {
+        "source": "synthetic"
+      },
+      "5min": {
+        "source": "synthetic"
+      },
+      "15min": {
+        "source": "synthetic"
+      }
+    },
+    "GBP/USD": {
+      "1min": {
+        "source": "synthetic"
+      },
+      "5min": {
+        "source": "synthetic"
+      },
+      "15min": {
+        "source": "synthetic"
+      }
+    },
+    "USD/JPY": {
+      "1min": {
+        "source": "synthetic"
+      },
+      "5min": {
+        "source": "synthetic"
+      },
+      "15min": {
+        "source": "synthetic"
+      }
+    },
+    "AUD/USD": {
+      "1min": {
+        "source": "synthetic"
+      },
+      "5min": {
+        "source": "synthetic"
+      },
+      "15min": {
+        "source": "synthetic"
+      }
+    },
+    "USD/CHF": {
+      "1min": {
+        "source": "synthetic"
+      },
+      "5min": {
+        "source": "synthetic"
+      },
+      "15min": {
+        "source": "synthetic"
+      }
+    },
+    "EUR/GBP": {
+      "1min": {
+        "source": "synthetic"
+      },
+      "5min": {
+        "source": "synthetic"
+      },
+      "15min": {
+        "source": "synthetic"
+      }
+    },
+    "EUR/JPY": {
+      "1min": {
+        "source": "synthetic"
+      },
+      "5min": {
+        "source": "synthetic"
+      },
+      "15min": {
+        "source": "synthetic"
+      }
+    },
+    "GBP/JPY": {
+      "1min": {
+        "source": "synthetic"
+      },
+      "5min": {
+        "source": "synthetic"
+      },
+      "15min": {
+        "source": "synthetic"
+      }
+    },
+    "NZD/USD": {
+      "1min": {
+        "source": "synthetic"
+      },
+      "5min": {
+        "source": "synthetic"
+      },
+      "15min": {
+        "source": "synthetic"
+      }
+    },
+    "USD/CAD": {
+      "1min": {
+        "source": "synthetic"
+      },
+      "5min": {
+        "source": "synthetic"
+      },
+      "15min": {
+        "source": "synthetic"
+      }
+    }
+  },
+  "timestamp": "2026-01-26T11:19:27.591339",
+  "api_keys_count": 37
+}

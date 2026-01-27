@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "backtest_date": "2026-01-26T09:08:50.793982",
+    "initial_capital": 1000,
+    "position_size": 50,
+    "payout_rate": 0.85,
+    "test_duration_days": 30,
+    "min_confidence_threshold": 70,
+    "trading_pairs_tested": 10
+  },
+  "results_by_expiry": {},
+  "overall_metrics": {},
+  "summary": {
+    "best_winrate_expiry": null,
+    "best_winrate": 0,
+    "best_pnl_expiry": null,
+    "best_pnl": 0,
+    "average_winrate": 0,
+    "total_trades_all_expiries": 0
+  }
+}

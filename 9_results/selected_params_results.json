@@ -1,0 +1,44 @@
+[
+  {
+    "pair": "USD/CAD",
+    "params": {
+      "rsi_period": 14,
+      "rsi_oversold": 25,
+      "rsi_overbought": 70,
+      "sma_short": 10,
+      "sma_long": 50,
+      "macd_fast": 8,
+      "macd_slow": 34,
+      "vote_threshold": 50
+    },
+    "metrics": {
+      "total_trades": 4611,
+      "wins": 2474,
+      "losses": 2137,
+      "win_rate": 53.65430492301019,
+      "profit_factor": 0.9840430510060829,
+      "total_pnl": -3410
+    }
+  },
+  {
+    "pair": "EUR/GBP",
+    "params": {
+      "rsi_period": 7,
+      "rsi_oversold": 30,
+      "rsi_overbought": 70,
+      "sma_short": 20,
+      "sma_long": 50,
+      "macd_fast": 8,
+      "macd_slow": 34,
+      "vote_threshold": 50
+    },
+    "metrics": {
+      "total_trades": 5249,
+      "wins": 2569,
+      "losses": 2680,
+      "win_rate": 48.94265574395123,
+      "profit_factor": 0.8147947761194027,
+      "total_pnl": -49635
+    }
+  }
+]

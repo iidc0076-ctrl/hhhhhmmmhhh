@@ -1,0 +1,9 @@
+{
+  "pair": "USD/CAD",
+  "total_trades": 111,
+  "overall_win_rate": 63.96,
+  "by_month": {
+    "Month_6": {
+      "trades": 28,
+      "win_rate": 67.86,
+      "pnl": 
