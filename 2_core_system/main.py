@@ -19758,7 +19758,8 @@ async def get_recommended_pair(expiry, mode, num_pairs=16, user_id=None, recomme
                 pge_rating = await calculate_pge_rating(pair, df, interval)
                 
                 # Apply multi-timeframe analysis if entry data available (NOT for 1m expiry)
-                final_confidence = confidence
+                # Entry timeframe is ONLY used to increase confluence confidence, NOT for primary recommendation decision
+                confluence_bonus = 0  # Bonus added to confluence confidence only
                 entry_signal_quality = "Good"
                 
                 if expiry != '1m' and pair in entry_data and entry_data[pair] is not None:
@@ -19774,15 +19775,15 @@ async def get_recommended_pair(expiry, mode, num_pairs=16, user_id=None, recomme
                                 entry_signal = entry_confidence_data['signal']
                                 entry_confidence = entry_confidence_data['confidence']
                                 
-                                # Multi-timeframe alignment bonus/penalty
+                                # Multi-timeframe alignment bonus/penalty - only affects confluence confidence, NOT recommendation
                                 if signal == entry_signal and entry_confidence >= 60:
-                                    final_confidence = min(95, confidence + 5)  # Alignment bonus
+                                    confluence_bonus = 5  # Alignment bonus to confluence only
                                     entry_signal_quality = "Excellent"
                                 elif signal != entry_signal:
-                                    final_confidence = max(45, confidence - 8)  # Misalignment penalty
+                                    confluence_bonus = -3  # Minor penalty to confluence only
                                     entry_signal_quality = "Poor"
                                     
-                                print(f"[DEBUG] {pair} entry timeframe: {entry_signal} vs {signal} -> final: {final_confidence:.1f}%")
+                                print(f"[DEBUG] {pair} entry timeframe: {entry_signal} {entry_confidence:.1f}% -> confluence bonus: {confluence_bonus}")
                     except Exception as e:
                         print(f"Entry timeframe analysis failed for {pair}: {e}")
                 
@@ -19792,13 +19793,13 @@ async def get_recommended_pair(expiry, mode, num_pairs=16, user_id=None, recomme
                 if signal == "NEUTRAL":
                     continue
                 
-                # STRICT user threshold enforcement - NO buffers or relaxation
-                print(f"[DEBUG] Checking {pair}: final_confidence={final_confidence:.1f}% vs threshold={min_confidence_threshold}%")
-                if final_confidence < min_confidence_threshold:
-                    print(f"[DEBUG] REJECTED {pair}: {final_confidence:.1f}% < {min_confidence_threshold}% (user threshold)")
+                # STRICT user threshold enforcement - use ACTUAL pair analysis confidence, not entry timeframe
+                print(f"[DEBUG] Checking {pair}: actual_confidence={confidence:.1f}% vs threshold={min_confidence_threshold}%")
+                if confidence < min_confidence_threshold:
+                    print(f"[DEBUG] REJECTED {pair}: {confidence:.1f}% < {min_confidence_threshold}% (user threshold)")
                     continue
                 else:
-                    print(f"[DEBUG] ACCEPTED {pair}: {final_confidence:.1f}% >= {min_confidence_threshold}% (user threshold)")
+                    print(f"[DEBUG] ACCEPTED {pair}: {confidence:.1f}% >= {min_confidence_threshold}% (user threshold)")
                 
                 # Streamlined risk-adjusted metrics for speed
                 try:
@@ -19820,9 +19821,9 @@ async def get_recommended_pair(expiry, mode, num_pairs=16, user_id=None, recomme
                 # Fix confluence_score calculation - get length of factors list, not the list itself
                 confluence_factors = confidence_data.get('confluence_factors', 0)
                 if isinstance(confluence_factors, list):
-                    confluence_score = len(confluence_factors)
+                    confluence_score = len(confluence_factors) + confluence_bonus
                 else:
-                    confluence_score = confluence_factors
+                    confluence_score = confluence_factors + confluence_bonus
                 
                 # Calculate direction boost based on signal alignment with regime
                 direction_boost = 0
@@ -19850,7 +19851,7 @@ async def get_recommended_pair(expiry, mode, num_pairs=16, user_id=None, recomme
                 if recommendation_type == "highest_confidence":
                     # Prioritize risk-adjusted confidence for highest confidence mode
                     overall_score = (risk_adjusted_confidence * 0.7 + 
-                                   final_confidence * 0.2 + 
+                                   confidence * 0.2 + 
                                    confluence_score * 2.0 + 
                                    direction_boost)
                 else:  # optimal
@@ -19859,7 +19860,7 @@ async def get_recommended_pair(expiry, mode, num_pairs=16, user_id=None, recomme
                     sharpe_bonus = min(5, risk_metrics.get('sharpe_ratio', 0) * 3)
                     
                     overall_score = (risk_adjusted_confidence * 0.4 + 
-                                   final_confidence * 0.3 + 
+                                   confidence * 0.3 + 
                                    (strength_score + direction_boost) * 0.2 + 
                                    confluence_score * 0.8 + 
                                    risk_reward_bonus + 
@@ -19869,8 +19870,8 @@ async def get_recommended_pair(expiry, mode, num_pairs=16, user_id=None, recomme
                 recommendation_data = {
                     'pair': pair,
                     'signal': signal,
-                    'confidence': final_confidence,  # Use final confidence after multi-timeframe adjustment
-                    'original_confidence': confidence,  # Keep original for comparison
+                    'confidence': confidence,  # Use actual pair analysis confidence for recommendation
+                    'confluence_bonus': confluence_bonus,  # Entry timeframe bonus (for display only)
                     'risk_adjusted_confidence': risk_adjusted_confidence,
                     'pge_rating': pge_rating,  # Add pGe rating to recommendation data
                     'volatility': market_quality['volatility'],
@@ -19890,19 +19891,19 @@ async def get_recommended_pair(expiry, mode, num_pairs=16, user_id=None, recomme
                 # Add multi-timeframe entry data 
                 recommendation_data.update({
                     'entry_timeframe': entry_timeframe_map.get(expiry, interval),
-                    'entry_confidence': final_confidence,
+                    'entry_confidence': confluence_bonus,  # Entry timeframe confidence adjustment
                     'entry_quality': entry_signal_quality,
                     'multi_timeframe_alignment': 90 if entry_signal_quality == "Excellent" else 75,
-                    'confidence_adjustment': final_confidence - confidence,
+                    'confidence_adjustment': confluence_bonus,  # Only confluence bonus, not final confidence
                     'user_threshold_met': True,
-                    'exceeds_threshold_by': final_confidence - min_confidence_threshold
+                    'exceeds_threshold_by': confidence - min_confidence_threshold
                 })
                 
                 recommendations.append(recommendation_data)
                 
                 # Early exit optimization: if we found a high-confidence signal and processed enough pairs, return early
-                if (final_confidence >= early_exit_threshold and len(recommendations) >= 1 and processed_count >= 8):
-                    print(f"[DEBUG] Early exit triggered: Found {final_confidence:.1f}% confidence signal after {processed_count} pairs")
+                if (confidence >= early_exit_threshold and len(recommendations) >= 1 and processed_count >= 8):
+                    print(f"[DEBUG] Early exit triggered: Found {confidence:.1f}% confidence signal after {processed_count} pairs")
                     break
 
             except Exception as e:
