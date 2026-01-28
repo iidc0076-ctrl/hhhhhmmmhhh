@@ -19747,7 +19747,13 @@ async def get_recommended_pair(expiry, mode, num_pairs=16, user_id=None, recomme
                 confidence_data = await engine.calculate_unified_confidence(df, indicators, pair, expiry, "unified")
                 signal = confidence_data['signal']
                 confidence = confidence_data['confidence']
-                print(f"[DEBUG] {pair} analysis: {signal} {confidence:.1f}%")
+                
+                # Debug: show primary signal breakdown for first few pairs
+                if processed_count <= 3:
+                    primary = confidence_data.get('primary_analysis', {})
+                    print(f"[DEBUG] {pair} detailed: base_signal={primary.get('primary_signal')} base_conf={primary.get('primary_confidence', 0):.1f}% -> final={confidence:.1f}%")
+                else:
+                    print(f"[DEBUG] {pair} analysis: {signal} {confidence:.1f}%")
                 
                 # Early threshold check - skip pairs that can't meet minimum requirement
                 if confidence < min_confidence_threshold - 5:  # 5% buffer for multi-timeframe boost
