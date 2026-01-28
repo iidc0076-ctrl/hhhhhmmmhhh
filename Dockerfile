@@ -3,8 +3,7 @@ FROM python:3.10-slim
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1
+    PYTHONDONTWRITEBYTECODE=1
 
 # Set the working directory
 WORKDIR /app
@@ -19,18 +18,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt /app/requirements.txt
 
 # Verify requirements.txt exists and list contents
-RUN if [ ! -f /app/requirements.txt ]; then echo "ERROR: requirements.txt not found!" && ls -la /app/ && exit 1; fi && \
-    echo "requirements.txt contents:" && cat /app/requirements.txt
+RUN echo "=== Installing dependencies ===" && \
+    cat /app/requirements.txt && \
+    echo "=== End of requirements ===" && \
+    pip install --upgrade pip setuptools wheel && \
+    pip install -r /app/requirements.txt
 
-# Upgrade pip and install Python dependencies
-RUN pip install --upgrade pip setuptools wheel
-RUN pip install -r /app/requirements.txt
+# Verify key dependencies are installed
+RUN python -c "import pandas; import discord; import aiohttp; import flask; import matplotlib; print('✓ All dependencies installed successfully')"
 
 # Copy the entire project into the container
 COPY . /app/
-
-# Verify imports work
-RUN python -c "import pandas; import discord; import aiohttp; print('All dependencies installed successfully')"
 
 # Run your main script
 CMD ["python", "2_core_system/main.py"]
