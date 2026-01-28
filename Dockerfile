@@ -4,11 +4,14 @@ FROM python:3.10-slim
 # Set the working directory
 WORKDIR /app
 
-# Copy your entire project into the container
-COPY . .
+# Copy requirements.txt first for better layer caching
+COPY requirements.txt .
 
-# Optional: If you eventually add requirements, this line won't break the build
-RUN if [ -f 2_core_system/requirements.txt ]; then pip install -r 2_core_system/requirements.txt; fi
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the entire project into the container
+COPY . .
 
 # Run your main script
 CMD ["python", "2_core_system/main.py"]
