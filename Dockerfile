@@ -16,17 +16,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements.txt first for better layer caching
-COPY requirements.txt /app/
+COPY requirements.txt /app/requirements.txt
 
-# Verify requirements.txt exists
-RUN if [ ! -f /app/requirements.txt ]; then echo "ERROR: requirements.txt not found!"; exit 1; fi
+# Verify requirements.txt exists and list contents
+RUN if [ ! -f /app/requirements.txt ]; then echo "ERROR: requirements.txt not found!" && ls -la /app/ && exit 1; fi && \
+    echo "requirements.txt contents:" && cat /app/requirements.txt
 
 # Upgrade pip and install Python dependencies
-RUN pip install --upgrade pip setuptools wheel && \
-    pip install -r /app/requirements.txt
+RUN pip install --upgrade pip setuptools wheel
+RUN pip install -r /app/requirements.txt
 
 # Copy the entire project into the container
 COPY . /app/
+
+# Verify imports work
+RUN python -c "import pandas; import discord; import aiohttp; print('All dependencies installed successfully')"
 
 # Run your main script
 CMD ["python", "2_core_system/main.py"]
