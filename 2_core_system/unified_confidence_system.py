@@ -151,6 +151,28 @@ class UnifiedConfidenceEngine:
             # Market Structure
             enhancement_signals['market_structure'] = self._analyze_market_structure(df, indicators)
             
+            # Pair-specific metrics for confidence differentiation
+            # Volatility calculation - shows noise level per pair
+            if not df.empty and len(df) >= 14:
+                try:
+                    high_low = (df['high'] - df['low']).tail(14)
+                    avg_price = df['close'].tail(14).mean()
+                    volatility_percent = (high_low.mean() / avg_price * 100) if avg_price > 0 else 0
+                    enhancement_signals['volatility_percent'] = volatility_percent
+                except Exception:
+                    enhancement_signals['volatility_percent'] = 0
+            
+            # Momentum strength calculation - shows directional strength per pair
+            if not df.empty and len(df) >= 20:
+                try:
+                    recent_close = df['close'].tail(20).values
+                    momentum = ((recent_close[-1] - recent_close[0]) / recent_close[0] * 100) if recent_close[0] > 0 else 0
+                    # Convert to 0-100 scale where 50 is neutral
+                    momentum_strength = 50 + min(50, max(-50, momentum * 5))  # Scale momentum to 0-100
+                    enhancement_signals['momentum_strength'] = abs(momentum_strength - 50) + 50 if momentum_strength != 50 else 50
+                except Exception:
+                    enhancement_signals['momentum_strength'] = 50
+            
             # Removed: Liquidity Zones and Seasonal Patterns (as requested by user)
             
             # Enhanced Confluence Factors
@@ -181,7 +203,7 @@ class UnifiedConfidenceEngine:
     
     def _calculate_final_confidence(self, primary_results: dict, enhancement_results: dict, 
                                   ml_results: dict, mode: str) -> dict:
-        """Calculate final unified confidence score"""
+        """Calculate final unified confidence score with pair-specific adjustments"""
         try:
             # Base confidence from primary signals
             base_signal = primary_results['primary_signal']
@@ -199,6 +221,41 @@ class UnifiedConfidenceEngine:
                 final_confidence += enhancement_adjustment
                 confidence_adjustments['enhancement_bonus'] = enhancement_adjustment
             
+            # Apply pair-specific adjustments for differentiation
+            # Extract volatility and momentum metrics from enhancement results if available
+            pair_adjustment = 0
+            
+            if enhancement_results and isinstance(enhancement_results, dict):
+                # Volatility Weighting: High volatility reduces confidence
+                volatility = enhancement_results.get('volatility_percent', 0)
+                if volatility > 0:
+                    # Penalize high volatility (>1.5% per candle is noisy)
+                    if volatility > 1.5:
+                        volatility_adjustment = -min(8, (volatility - 1.5) * 2)  # -8% max
+                    # Reward low volatility (<0.5% is clean)
+                    elif volatility < 0.5:
+                        volatility_adjustment = min(5, (0.5 - volatility) * 5)  # +5% max
+                    else:
+                        volatility_adjustment = 0
+                    pair_adjustment += volatility_adjustment
+                    confidence_adjustments['volatility_adjustment'] = volatility_adjustment
+                
+                # Momentum Divergence: Strong momentum in signal direction increases confidence
+                momentum = enhancement_results.get('momentum_strength', 0)
+                if momentum > 0:
+                    # Strong momentum (>70) adds confidence
+                    if momentum > 70:
+                        momentum_adjustment = min(8, (momentum - 70) * 0.3)  # +8% max
+                    # Weak momentum (<40) reduces confidence
+                    elif momentum < 40:
+                        momentum_adjustment = max(-6, (momentum - 40) * 0.15)  # -6% max
+                    else:
+                        momentum_adjustment = 0
+                    pair_adjustment += momentum_adjustment
+                    confidence_adjustments['momentum_adjustment'] = momentum_adjustment
+            
+            final_confidence += pair_adjustment
+            
             # ML adjustment removed as requested
             
             # Apply unified confidence cap (92% as per latest specifications)
@@ -213,6 +270,7 @@ class UnifiedConfidenceEngine:
                 'breakdown': {
                     'base_confidence': base_confidence,
                     'adjustments': confidence_adjustments,
+                    'pair_adjustment': pair_adjustment,
                     'mode': 'unified',
                     'final_confidence': final_confidence
                 }
@@ -533,7 +591,8 @@ class UnifiedConfidenceEngine:
                 'strength': strength,
                 'confidence': confidence,
                 'buy_weight': buy_weight,
-                'sell_weight': sell_weight
+                'sell_weight': sell_weight,
+                'weight_ratio': buy_weight / total_weight if total_weight > 0 else 0.5
             }
             
         except Exception as e:
