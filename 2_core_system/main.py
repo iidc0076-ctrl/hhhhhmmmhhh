@@ -19953,6 +19953,41 @@ async def get_recommended_pair(expiry, mode, num_pairs=16, user_id=None, recomme
         print(f"[RECOMMENDATION] Phase 3B: Final selection from top pGe pairs:")
         print(f"[RECOMMENDATION] Winner: {best_recommendation['pair']} - pGe: {best_recommendation['pge_rating']:.1f}% | Confidence: {best_recommendation['confidence']:.1f}%")
         
+        # PHASE 3C: Apply ML Ensemble confidence adjustment to final selected pair
+        try:
+            from ml_confidence_adjuster import get_ml_confidence_adjustment
+            pair = best_recommendation['pair']
+            if pair in all_data and all_data[pair] is not None:
+                df_final = all_data[pair]
+                indicators_final = get_indicators(df_final)
+                if indicators_final:
+                    adjusted_confidence, ml_details = get_ml_confidence_adjustment(
+                        df_final,
+                        indicators_final,
+                        best_recommendation['signal'],
+                        best_recommendation['confidence'],
+                        pair
+                    )
+                    
+                    # Store ML details for display
+                    best_recommendation['ml_adjustment'] = ml_details
+                    
+                    # Update confidence with ML adjustment
+                    original_confidence = best_recommendation['confidence']
+                    best_recommendation['confidence'] = adjusted_confidence
+                    best_recommendation['ml_adjusted'] = True
+                    best_recommendation['confidence_before_ml'] = original_confidence
+                    
+                    if ml_details and ml_details['confidence_adjustment'] != 0:
+                        print(f"[RECOMMENDATION] ML Ensemble adjustment: {original_confidence:.1f}% -> {adjusted_confidence:.1f}% (adjustment: {ml_details['confidence_adjustment']:+.1f}%)")
+                        print(f"[RECOMMENDATION] ML Agreement: {ml_details['agreement_level']} (ML Signal: {ml_details['ml_signal']})")
+        except ImportError:
+            print("[RECOMMENDATION] ML Ensemble not available, skipping ML adjustment")
+            best_recommendation['ml_adjusted'] = False
+        except Exception as e:
+            print(f"[RECOMMENDATION] ML adjustment failed: {e}, using original confidence")
+            best_recommendation['ml_adjusted'] = False
+        
         # Add ranking information to best recommendation
         best_recommendation['rank'] = 1
         best_recommendation['total_candidates'] = len(recommendations)

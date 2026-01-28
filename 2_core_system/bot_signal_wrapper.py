@@ -19,6 +19,13 @@ except ImportError:
     BOT_ENGINE_AVAILABLE = False
     UnifiedConfidenceEngine = None
 
+# Try to import ML Ensemble adjuster
+try:
+    from ml_confidence_adjuster import get_ml_confidence_adjustment
+    ML_ADJUSTER_AVAILABLE = True
+except ImportError:
+    ML_ADJUSTER_AVAILABLE = False
+
 
 class SyncBotSignalWrapper:
     """Synchronous wrapper for bot signal generation in backtest environment"""
@@ -38,9 +45,10 @@ class SyncBotSignalWrapper:
     def get_signal(self, data: pd.DataFrame, current_idx: int, pair: str = 'EUR/USD') -> Optional[Dict]:
         """
         Generate bot signal for current candle (synchronous)
+        Includes ML Ensemble confidence adjustment
         
         Returns:
-            Dict with 'signal' (CALL/PUT), 'confidence' (0-100)
+            Dict with 'signal' (CALL/PUT), 'confidence' (0-100), optional 'ml_adjustment'
             or None if no signal
         """
         
@@ -67,11 +75,34 @@ class SyncBotSignalWrapper:
             if signal not in ['CALL', 'PUT']:
                 return None
             
-            return {
+            # Convert bot signal to BUY/SELL for ML adjuster
+            signal_for_ml = 'BUY' if signal == 'CALL' else 'SELL'
+            
+            # Apply ML Ensemble confidence adjustment
+            ml_adjustment = None
+            if ML_ADJUSTER_AVAILABLE:
+                try:
+                    adjusted_confidence, ml_adjustment = get_ml_confidence_adjustment(
+                        df_window, 
+                        indicators, 
+                        signal_for_ml, 
+                        confidence,
+                        pair
+                    )
+                    confidence = adjusted_confidence
+                except Exception as e:
+                    pass  # Silently fail, use original confidence
+            
+            result = {
                 'signal': signal,
                 'confidence': float(confidence),
                 'source': 'bot_engine'
             }
+            
+            if ml_adjustment:
+                result['ml_adjustment'] = ml_adjustment
+            
+            return result
             
         except Exception as e:
             return None
